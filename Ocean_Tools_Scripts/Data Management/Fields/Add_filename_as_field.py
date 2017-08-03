@@ -6,7 +6,9 @@
 #
 # Created:     August 3, 2017
 # Copyright:   (c) Keith VanGraafeiland 2017
-# Licence:     <your licence>
+# Licence:     MIT License
+# Version      0.1
+# Tested against ArcGIS Pro 2.0
 #-------------------------------------------------------------------------------
 import arcpy, os, os.path, string, socket, datetime
 
