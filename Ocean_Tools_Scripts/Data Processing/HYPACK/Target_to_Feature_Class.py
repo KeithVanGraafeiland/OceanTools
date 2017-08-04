@@ -23,7 +23,6 @@ path = sys.argv[2]
 out_gdb = sys.argv[3]
 spRef = sys.argv[4]
 
-
 for files2 in fileList:
   files = files2.strip("'")
   try:
@@ -36,7 +35,6 @@ for files2 in fileList:
     filename2 = filename.strip(".tgt").strip(".TGT").strip(".txt")
     filename3 = filename2.replace("-", "_")
     print (filename3)
-
 
     #path = str(tempfile.TemporaryFile())
     print (path)
@@ -108,15 +106,6 @@ for files2 in fileList:
     del cursor
 
     print ("copy done")
-
-##
-##    if out_gdb == "#":
-##      pass
-##    else:
-##
-##      arcpy.CopyFeatures_management(saved_shapefile, fc)
-
-
 
       # If an error occurred print the message to the screen
     print (arcpy.GetMessages())
