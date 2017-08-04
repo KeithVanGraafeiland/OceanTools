@@ -2,13 +2,16 @@
 # Name:        Add Filename as Field
 # Purpose:     Add the filename and path as a field to the input feature class.
 #
-# Author:      Keith VanGraafeiland
+# Author:       Keith VanGraafeiland
+# Created:      August 3, 2017
+# Copyright:    (c) Keith VanGraafeiland 2017
+# Licence:      MIT License
+# Version:      0.1
+# Tested:       ArcGIS Pro 2.0
 #
-# Created:     August 3, 2017
-# Copyright:   (c) Keith VanGraafeiland 2017
-# Licence:     MIT License
-# Version      0.1
-# Tested against ArcGIS Pro 2.0
+# This script takes an input feature class and adds fields for the filename and
+# path.  Useful tool prior to merging data together to track source, etc.
+#
 #-------------------------------------------------------------------------------
 import arcpy, os, os.path, string, socket, datetime
 
