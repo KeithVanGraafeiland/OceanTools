@@ -19,9 +19,8 @@ arcpy.OverWriteOutput = 1
 arcpy.env.overwriteOutput = True
 pytemp = tempfile.mkdtemp()
 fileList = str.split(sys.argv[1], ";")
-path = sys.argv[2]
-out_gdb = sys.argv[3]
-spRef = sys.argv[4]
+out_gdb = sys.argv[2]
+spRef = sys.argv[3]
 
 for files2 in fileList:
   files = files2.strip("'")
@@ -35,9 +34,6 @@ for files2 in fileList:
     filename2 = filename.strip(".tgt").strip(".TGT").strip(".txt")
     filename3 = filename2.replace("-", "_")
     print (filename3)
-
-    #path = str(tempfile.TemporaryFile())
-    print (path)
 
     env.workspace = pytemp
     csvfile = pytemp + os.sep + filename3 + ".csv"
@@ -72,7 +68,6 @@ for files2 in fileList:
 
     saved_Layer = pytemp + os.sep + filename3 + ".lyrx"
 
-    saved_shapefile = path + os.sep + filename3 + ".shp"
     fc = out_gdb + os.sep + "TGT_" + filename3
 
       # Set the spatial reference
