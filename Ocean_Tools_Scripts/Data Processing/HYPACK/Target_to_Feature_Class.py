@@ -15,6 +15,7 @@
 #-------------------------------------------------------------------------------
 import arcpy, os, sys, string, tempfile
 from arcpy import env
+aprx = arcpy.mp.ArcGISProject('current')
 arcpy.OverWriteOutput = 1
 arcpy.env.overwriteOutput = True
 pytemp = tempfile.mkdtemp()
@@ -99,6 +100,9 @@ for files2 in fileList:
       row[3] = date_time
       cursor.updateRow(row)
     del cursor
+
+    currentMapProject = aprx.listMaps()[0]
+    currentMapProject.addDataFromPath(fc)
 
     print ("copy done")
 
