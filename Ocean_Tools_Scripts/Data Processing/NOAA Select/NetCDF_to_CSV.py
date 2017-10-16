@@ -67,7 +67,7 @@ def proceeItemsInSubDir(dirName, writer):
 
             for i in range(0, len(value_array)):
                 if f.variables[varName][i] > 0:
-                    writer.writerow((f.variables['date'][0], f.variables['lat'][0], f.variables['lon'][0], f.variables['z'][i], '{:.20f}'.format(f.variables[varName][i]),fileFolderName,filename))
+                    writer.writerow((f.variables['date'][0], f.variables['lat'][0], f.variables['lon'][0], f.variables['z'][i] * -1, '{:.20f}'.format(f.variables[varName][i]),fileFolderName,filename))
             f.close()
 
         else:
