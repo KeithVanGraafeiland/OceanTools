@@ -57,7 +57,7 @@ def proceeItemsInSubDir(dirName, writer):
 
     for filename in os.listdir(dirName):
 
-        if filename.endswith('.nc'):
+        if filename.endswith('.nc') and not filename.lower().startswith("ocldb"):
             filepath = os.path.join(dirName, filename)
             fileFolderParts = dirName.split("\\")
             fileFolderName = fileFolderParts[len(fileFolderParts) - 1]
