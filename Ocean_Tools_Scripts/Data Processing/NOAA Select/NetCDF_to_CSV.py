@@ -19,6 +19,7 @@
 import netCDF4
 import os
 import csv
+import arcpy
 
 ##variables
 directory = arcpy.GetParameterAsText(0)
@@ -40,7 +41,7 @@ def processItemsInMainDir(index, dirName, outputCsvFile):
 ##    arcpy.AddMessage("outputFilePath: " + outputFilePath)
 ##    out = open(outputFilePath, 'w')
 
-    writer = csv.writer(outputCsvFile)
+    writer = csv.writer(outputCsvFile, lineterminator='\n')
 
     if(index == 0):
         writer.writerow(('date', 'lat', 'lon','z', varName,'directory','filename'))
@@ -82,6 +83,12 @@ def executeScript():
             processItemsInMainDir(idx, name, outputCsvFile)
 
     outputCsvFile.close()
+    outputGDBpath = arcpy.env.workspace
+    outputName = varName + '_working'
+    arcpy.AddMessage(outputGDBpath)
+    arcpy.AddMessage(outputName)
+    arcpy.AddMessage(outputCsvPath)
+    arcpy.conversion.TableToTable(outputCsvPath,outputGDBpath,outputName)
 
 ## start executing the script
 executeScript()

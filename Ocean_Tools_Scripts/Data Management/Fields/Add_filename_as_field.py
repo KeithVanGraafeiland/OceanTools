@@ -18,7 +18,7 @@ import arcpy, os, os.path, string, socket, datetime
 file_list_str = arcpy.GetParameterAsText(0)
 file_list = file_list_str.split(";")
 
-for i2 in File_list:
+for i2 in file_list:
     i = i2.strip("'")
     filename = os.path.basename(i.strip(".shp"))
     fieldname = arcpy.ValidateFieldName("FILE_NAME", os.path.dirname(i))
